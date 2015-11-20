@@ -28,20 +28,20 @@ Market Analysts.
 
 -> Homepage:
 
-![alt tag](https://github.com/vijeshjain/Company_Acquisition_Prediction/blob/master/Screenshots/Homepage.PNG)
+![alt tag](https://github.com/Chhavi1991Gupta/DataCrunchers/blob/master/Screenshots/Screen%20Shot%202015-11-20%20at%203.24.40%20PM.png)
 
 -> Analyze a company pair [ Microsoft (MSFT) & Nokia (NOK) ]:
 
-![alt tag](https://github.com/vijeshjain/Company_Acquisition_Prediction/blob/master/Screenshots/Analyze.PNG)
+![alt tag](https://github.com/Chhavi1991Gupta/DataCrunchers/blob/master/Screenshots/Screen%20Shot%202015-11-20%20at%203.24.46%20PM.png)
 
 -> Visualize Stats:
 
-![alt tag](https://github.com/vijeshjain/Company_Acquisition_Prediction/blob/master/Screenshots/Stats.PNG)
+![alt tag](https://github.com/Chhavi1991Gupta/DataCrunchers/blob/master/Screenshots/Screen%20Shot%202015-11-20%20at%203.24.54%20PM.png)
 
 -> Sentiment Analysis:
 
-![alt tag](https://github.com/vijeshjain/Company_Acquisition_Prediction/blob/master/Screenshots/Tweets.PNG)
+![alt tag](https://github.com/Chhavi1991Gupta/DataCrunchers/blob/master/Screenshots/Screen%20Shot%202015-11-20%20at%203.38.27%20PM.png)
 
--> Merger & Acquisition (M&A) Prediction Results:
+-> Prediction Results:
 
-![alt tag](https://github.com/vijeshjain/Company_Acquisition_Prediction/blob/master/Screenshots/Prediction.PNG)
+![alt tag](https://github.com/Chhavi1991Gupta/DataCrunchers/blob/master/Screenshots/Screen%20Shot%202015-11-20%20at%203.38.45%20PM.png)
