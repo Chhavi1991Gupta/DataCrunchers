@@ -5,7 +5,7 @@ CMPE 239: Web &amp; Data Mining
 
 1. System to predict future company acquisitions.
 2. The algorithm uses past 3 years of financial records of the companies.
-3. It determines the probability (%) of Merger & Acquisition (M&A) of two companies.
+3. It determines the probability (%) of two companies.
 4. To support the prediction results, social media sentiments are also included of these companies to provide the sentiments of
 Market Analysts.
 5. End Users: Market Analysts, Investors.
