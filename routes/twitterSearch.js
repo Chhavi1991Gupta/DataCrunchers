@@ -1,4 +1,6 @@
-
+/**
+ * Created by Shubhi Yede on 11/18/2015.
+ */
 var util = require('util'),
     twit = require('twit'),
     sentimentAnalysis = require('./twitterSentimentAnalysis.js');
@@ -11,49 +13,57 @@ var config = {
 };
 
 
-exports.getTweets = function getTweets(comp1, comp2, callback) {
+exports.getTweets = function getTweets(comp1, criteria, callback) {
     var twitterClient = new twit(config);
-    //console.log(JSON.stringify(twitterClient));
-    //var response = [], dbData = []; // to store the tweets and sentiment
-    var tweets = [];
+    var tweetsPolarity = [];
     var positive = 0;
     var negative = 0;
     var neutral = 0;
-    var tweetsPolarity = [];
-    var twitQuery = comp1 + " " + comp2;
-    twitterClient.get('search/tweets', {q: twitQuery, count: 50}, function (err, data) {
-            var totalTweets = data.statuses;
-            console.log(JSON.stringify(totalTweets));
-            for (var i = 0; i < totalTweets.length; i++) {
-                totalTweets[i].text = totalTweets[i].text.replace(/^RT/, "");
-                totalTweets[i].text = totalTweets[i].text.replace(/^ReTw/, "");
-                //totalTweets[i].text = totalTweets[i].text.replace(/@\\w+/g, "");
-                //totalTweets[i].text = totalTweets[i].text.replace(/[[:punct:]]/g, "");
-                //totalTweets[i].text = totalTweets[i].text.replace(/[[:digit:]]/g, "");
-                //totalTweets[i].text = totalTweets[i].text.replace(/http\\w+/g, "");
-                //totalTweets[i].text = totalTweets[i].text.replace(/[ \t]{2,}/g, "");
-                //totalTweets[i].text = totalTweets[i].text.replace(/^\\s+|\\s+$/g, "");
-
-                tweets.push(totalTweets[i].text);
-                console.log(sentimentAnalysis(tweets[i]));
-                if (sentimentAnalysis(tweets[i]) >= 2) {
-                    positive++;
-                }
-                else if (sentimentAnalysis(tweets[i]) >= 0 && sentimentAnalysis(tweets[i]) < 2) {
-                    neutral++;
-                }
-                else {
-                    negative++;
-                }
-            }
-            tweetsPolarity.push(positive);
-            tweetsPolarity.push(negative);
-            tweetsPolarity.push(neutral);
-            console.log(tweets);
-            console.log("positive: " + positive + ", negative: " + negative + ", neutral: " + neutral);
-            callback(err, tweetsPolarity, tweets);
-        }
+    var twitQuery;
+    var analysisResult;
+    var tweets = [];
+    twitQuery = comp1 + ' stocks since:2015-01-01';
+    twitterClient.get('search/tweets', {q: twitQuery, count: 100}, function (err, data) {
+          var totalTweets = data.statuses;
+          
+          //console.log(JSON.stringify(totalTweets));
+          //console.log("totalTweets.length="+totalTweets.length);
+          for (var i = 0; i < totalTweets.length; i++) {
+              totalTweets[i].text = totalTweets[i].text.replace(/^RT/, "");
+              totalTweets[i].text = totalTweets[i].text.replace(/^ReTw/, "");
+              tweets.push(totalTweets[i].text);
+          }
+          console.log("tweets.length="+tweets.length);
+      }
     );
-
-
+    twitQuery = comp1 + ' loss' + ' since:2015-01-01';
+    twitterClient.get('search/tweets', {q: twitQuery, count: 100}, function (err, data) {
+          var totalTweets = data.statuses;
+          
+          //console.log(JSON.stringify(totalTweets));
+          //console.log("totalTweets.length="+totalTweets.length);
+          for (var i = 0; i < totalTweets.length; i++) {
+              totalTweets[i].text = totalTweets[i].text.replace(/^RT/, "");
+              totalTweets[i].text = totalTweets[i].text.replace(/^ReTw/, "");
+              tweets.push(totalTweets[i].text);
+          }
+          console.log("tweets.length="+tweets.length);
+      }
+    );
+    twitQuery = comp1 + ' profit' + ' since:2015-01-01';
+    twitterClient.get('search/tweets', {q: twitQuery, count: 100}, function (err, data) {
+          var totalTweets = data.statuses;
+          
+          //console.log(JSON.stringify(totalTweets));
+          //console.log("totalTweets.length="+totalTweets.length);
+          for (var i = 0; i < totalTweets.length; i++) {
+              totalTweets[i].text = totalTweets[i].text.replace(/^RT/, "");
+              totalTweets[i].text = totalTweets[i].text.replace(/^ReTw/, "");
+              tweets.push(totalTweets[i].text);
+          }
+          console.log("tweets.length="+tweets.length);
+          analysisResult=sentimentAnalysis(tweets);
+          callback(err, analysisResult, tweets);
+      }
+    );
 }
