@@ -1,6 +1,4 @@
-/**
- * Created by Shubhi Yede on 11/18/2015.
- */
+
 var util = require('util'),
     twit = require('twit'),
     sentimentAnalysis = require('./twitterSentimentAnalysis.js');
