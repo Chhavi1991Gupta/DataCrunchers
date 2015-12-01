@@ -45,7 +45,7 @@ CMPE 239: Web &amp; Data Mining
 
 -> Sentiment Analysis:
 
-![alt tag](https://github.com/Chhavi1991Gupta/DataCrunchers/blob/master/Screenshots/Screen%20Shot%202015-11-20%20at%203.38.27%20PM.png)
+![alt tag](https://github.com/Chhavi1991Gupta/DataCrunchers/blob/master/Screenshots/Screen_Shot2.png)
 
 -> Prediction Results:
 
