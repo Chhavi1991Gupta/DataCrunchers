@@ -1,6 +1,4 @@
-/**
- * Created by shubhiyede on 17/11/2015.
- */
+
 var mysql = require('./mysql');
 var tweetStats = require('./twitterSearch');
 
@@ -8,7 +6,7 @@ exports.getStats = function (req, res) {
 
     var compFirst = req.param("comp1");//.toLowerCase().trim();
     var criteria = "";//"stock equity asset liability revenue EBITDA profit loss cash up down";
-    //var compSecond = req.param("comp2").toLowerCase().trim();
+    
     var getStats = "select * from mytable1 where Company_Name='" + compFirst + "'";
     console.log(getStats);
     var polarity = [0,0,0];
@@ -113,23 +111,8 @@ exports.getStats = function (req, res) {
                 shareValues.push(comp1[2].Share_Values);
                 shareValues.push(predict_share_value);
                 
-                //var clustersCopy = analysisResult.clusters;
-                //var cluster1 = clustersCopy[0];
-                //for(var i=0)
 
-                /*
-                var result = {
-        score:          score,
-        vsm:            vsm,
-        feature1Words:  feature1Words,
-        feature2Words:  feature2Words,
-        feature1Sentiment:  feature1Sentiment,
-        feature2Sentiment:  feature2Sentiment,
-        VS:             VS,
-        US:             US,
-        clusters:       clusters
-    };
-                */
+             
                 
                 res.render('viewStats', {
                     data: rows,

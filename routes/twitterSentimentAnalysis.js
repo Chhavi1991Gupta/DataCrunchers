@@ -1,8 +1,7 @@
-/**
- * Created by Shubhi Yede on 11/18/2015.
- */
 var sentiment = require('sentiment');
 
 module.exports = function(text) {
+console.log(typeof text);
+console.log(text);
     return sentiment(text);
 };
